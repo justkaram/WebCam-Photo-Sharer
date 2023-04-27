@@ -9,10 +9,10 @@ Builder.load_file('frontend.kv')
 
 class CameraScreen(Screen):
     def start(self):
-        pass
+        self.manager.current_screen.ids.cam = True
 
     def stop(self):
-        pass
+        self.manager.current_screen.ids.cam = False
 
     def capture(self):
         pass

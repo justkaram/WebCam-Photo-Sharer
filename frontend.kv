@@ -6,16 +6,19 @@
         spacing: 10
         Camera:
             resolution: (640, 480)
+            play: False
         Button:
             size_hint: (0.1, 0.1)
             size: (3, 10)
             text: 'Start Camera'
             background_color: 'green'
+            on_press: root.start()
         Button:
             size_hint: (0.1, 0.1)
             size: (3, 10)
             text: 'Capture'
             background_color: 'green'
+            on_press: root.stop()
 <RootWidget>:
     CameraScreen:
         id: camera_screen
