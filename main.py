@@ -1,13 +1,13 @@
-import os
-
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.lang import Builder
-from kivy.uix.camera import Camera
 from filestack import Client
 import time
+import os
+import pyperclip
 
 Builder.load_file('frontend.kv')
+
 
 class CameraScreen(Screen):
     def start(self):
@@ -45,8 +45,15 @@ class ImageScreen(Screen):
         os.chdir('files')
         img_path = os.listdir()[-1]
         file = FileShare(file_path=img_path)
-        img_url = file.get_link()
-        self.manager.current_screen.ids.link_label.text = img_url
+        self.img_url = file.get_link()
+        self.manager.current_screen.ids.link_label.text = self.img_url
+
+    def copy_link(self):
+        try:
+            pyperclip.copy(self.img_url)
+        except AttributeError:
+            self.ids.link_label.text = 'Create a link first'
+
 
 class RootWidget(ScreenManager):
     pass
