@@ -21,7 +21,33 @@
             text: 'Capture'
             background_color: 'green'
             on_press: root.capture()
+
+        Button:
+            text: 'convert to second'
+            on_press: root.current = second_
+
+<ImageScreen>:
+    GridLayout:
+        cols: 1
+        spacing: 10
+        Image:
+        Button:
+            text: 'Create sharable link'
+        Label:
+            text: ''
+        GridLayout:
+            cols: 2
+            Button:
+                text: 'Copy'
+            Button:
+                text: 'open image in browser'
+
 <RootWidget>:
     CameraScreen:
         id: camera_screen
         name: 'camera_screen'
+
+    ImageScreen:
+        id: image_screen
+        name: 'image_screen'
+

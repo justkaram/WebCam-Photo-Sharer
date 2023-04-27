@@ -7,7 +7,6 @@ import time
 
 Builder.load_file('frontend.kv')
 
-
 class CameraScreen(Screen):
     def start(self):
         self.ids.cam.play = True
@@ -22,6 +21,7 @@ class CameraScreen(Screen):
         current_time = time.strftime('%d%m%Y-%H%M%S')
         path = f'files/{current_time}.png'
         self.ids.cam.export_to_png(path)
+        self.manager.current = 'image_screen'
 
 
 class FileShare:
