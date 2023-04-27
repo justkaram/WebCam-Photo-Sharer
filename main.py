@@ -1,7 +1,7 @@
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.lang import Builder
-from filestack import Client
+from file_share import FileShare
 import time
 import os
 import pyperclip
