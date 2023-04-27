@@ -10,6 +10,7 @@ Builder.load_file('frontend.kv')
 class CameraScreen(Screen):
     def start(self):
         self.ids.cam.play = True
+        self.ids.cam_button.text = 'Stop Camera'
 
     def stop(self):
         self.ids.cam.play = False
@@ -24,7 +25,7 @@ class FileShare:
         self.file_path = file_path
         self.api_key = api_key
 
-    def gigi(self):
+    def get_link(self):
         client = Client(apikey=self.api_key)
         link = client.upload(filepath=self.file_path)
         return link.url

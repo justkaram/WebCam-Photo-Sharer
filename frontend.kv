@@ -8,18 +8,13 @@
             resolution: (640, 480)
             play: False
         Button:
+            id: cam_button
             size_hint: (0.1, 0.1)
             size: (3, 10)
             text: 'Start Camera'
             background_color: 'green'
-            on_press: root.start()
+            on_press: root.start() if cam.play == False else root.stop()
 
-        Button:
-            size_hint: (0.1, 0.1)
-            size: (3, 10)
-            text: 'Stop Camera'
-            background_color: 'green'
-            on_press: root.stop()
         Button:
             size_hint: (0.1, 0.1)
             size: (3, 10)
