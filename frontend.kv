@@ -1,21 +1,9 @@
 #:import Camera kivy.uix.camera
 
-<FirstScreen>:
+<CameraScreen>:
     GridLayout:
         cols: 1
         spacing: 10
-        BoxLayout:
-            orientation: 'vertical'
-
-            Camera:
-                id: camera
-                resolution: (640, 480)
-                play: True
-
-            Button:
-                text: 'Take picture'
-                on_press: camera.export_to_png('image.png')
-
         Button:
             size_hint: (0.1, 0.1)
             size: (3, 10)
@@ -27,6 +15,6 @@
             text: 'Capture'
             background_color: 'green'
 <RootWidget>:
-    FirstScreen:
-        id: first_screen
-        name: 'first_screen'
+    CameraScreen:
+        id: camera_screen
+        name: 'camera_screen'
