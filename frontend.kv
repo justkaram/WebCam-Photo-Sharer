@@ -22,9 +22,6 @@
             background_color: 'green'
             on_press: root.capture()
 
-        Button:
-            text: 'convert to second'
-            on_press: root.current = second_
 
 <ImageScreen>:
     GridLayout:
@@ -36,6 +33,7 @@
             text: 'Create sharable link'
             size: (3, 10)
         Label:
+            id: link_label
             text: ''
         GridLayout:
             cols: 2

@@ -1,3 +1,5 @@
+import os
+
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.lang import Builder
@@ -38,8 +40,13 @@ class FileShare:
 
 
 class ImageScreen(Screen):
-    pass
 
+    def create_link(self):
+        os.chdir('files')
+        img_path = os.listdir()[-1]
+        file = FileShare(file_path=img_path)
+        img_url = file.get_link()
+        self.manager.current_screen.ids.link_label.text = img_url
 
 class RootWidget(ScreenManager):
     pass
