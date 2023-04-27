@@ -5,6 +5,7 @@ from filestack import Client
 import time
 import os
 import pyperclip
+import webbrowser
 
 Builder.load_file('frontend.kv')
 
@@ -40,6 +41,7 @@ class FileShare:
 
 
 class ImageScreen(Screen):
+    link_message = 'Create a link first !!'
 
     def create_link(self):
         os.chdir('files')
@@ -52,7 +54,13 @@ class ImageScreen(Screen):
         try:
             pyperclip.copy(self.img_url)
         except AttributeError:
-            self.ids.link_label.text = 'Create a link first'
+            self.ids.link_label.text = self.link_message
+
+    def open_link(self):
+        try:
+            webbrowser.open(self.img_url)
+        except AttributeError:
+            self.ids.link_label.text = self.link_message
 
 
 class RootWidget(ScreenManager):
