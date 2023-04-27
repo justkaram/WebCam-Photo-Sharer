@@ -14,6 +14,8 @@ class CameraScreen(Screen):
 
     def stop(self):
         self.ids.cam.play = False
+        self.ids.cam_button.text = 'Start Camera'
+        self.ids.cam.texture = None
 
     def capture(self):
         pass
