@@ -18,7 +18,7 @@ class CameraScreen(Screen):
         self.ids.cam.texture = None
 
     def capture(self):
-        pass
+        self.ids.cam.export_to_png('image.png')
 
 
 class FileShare:
