@@ -1,10 +1,10 @@
-#:import Camera kivy.uix.camera
 
 <CameraScreen>:
     GridLayout:
         cols: 1
         spacing: 10
         Camera:
+            id: cam
             resolution: (640, 480)
             play: False
         Button:
@@ -13,12 +13,19 @@
             text: 'Start Camera'
             background_color: 'green'
             on_press: root.start()
+
+        Button:
+            size_hint: (0.1, 0.1)
+            size: (3, 10)
+            text: 'Stop Camera'
+            background_color: 'green'
+            on_press: root.stop()
         Button:
             size_hint: (0.1, 0.1)
             size: (3, 10)
             text: 'Capture'
             background_color: 'green'
-            on_press: root.stop()
+            on_press: cam.export_to_png('image.png')
 <RootWidget>:
     CameraScreen:
         id: camera_screen
