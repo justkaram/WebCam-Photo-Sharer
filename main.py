@@ -22,6 +22,7 @@ class CameraScreen(Screen):
         path = f'files/{current_time}.png'
         self.ids.cam.export_to_png(path)
         self.manager.current = 'image_screen'
+        self.manager.current_screen.ids.img_screen.source = path
 
 
 class FileShare:
