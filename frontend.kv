@@ -1,51 +1,64 @@
 <CameraScreen>:
     GridLayout:
         cols: 1
+        padding: 10
         spacing: 10
         Camera:
             id: cam
             resolution: (640, 480)
+            size_hint_y: 0.8
             play: False
         Button:
             id: cam_button
-            size_hint: (0.1, 0.1)
-            size: (3, 10)
+            size_hint_y: 0.1
             text: 'Start Camera'
-            background_color: 'green'
+            background_color: 'orange'
             on_press: root.start() if cam.play == False else root.stop()
 
         Button:
             size_hint: (0.1, 0.1)
-            size: (3, 10)
+            size_hint_y: 0.1
             text: 'Capture'
-            background_color: 'green'
+            background_color: 'orange'
             on_press: root.capture()
 
 
 <ImageScreen>:
     GridLayout:
         cols: 1
+        padding: 10
         spacing: 10
         Image:
             id: img_screen
+            size_hint_y: 0.7
         Button:
             text: 'Create sharable link'
-            size: (3, 10)
             on_press: root.create_link()
+            background_color: 'orange'
+            size_hint_y: 0.1
         Label:
             id: link_label
             text: ''
+            size_hint_y: 0.1
         GridLayout:
-            cols: 2
+            cols: 3
+            size_hint_y: 0.1
             Button:
                 text: 'Copy'
                 size: (3, 10)
                 on_press: root.copy_link()
+                background_color: 'orange'
             Button:
                 text: 'Open Link'
                 size: (3, 10)
                 on_press: root.open_link()
+                background_color: 'orange'
 
+            Button:
+                text: 'Back To Camera'
+                size: (3, 10)
+                on_press: root.back_to_cam()
+                background_color: 'orange'
 <RootWidget>:
     CameraScreen:
         id: camera_screen
