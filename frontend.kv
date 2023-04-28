@@ -12,16 +12,17 @@
             id: cam_button
             size_hint_y: 0.1
             text: 'Start Camera'
-            background_color: 'orange'
             on_press: root.start() if cam.play == False else root.stop()
-
+            background_normal: 'images/normal.png'
+            background_down: 'images/down.png'
         Button:
             size_hint: (0.1, 0.1)
             size_hint_y: 0.1
             text: 'Capture'
             background_color: 'orange'
             on_press: root.capture()
-
+            background_normal: 'images/normal.png'
+            background_down: 'images/down.png'
 
 <ImageScreen>:
     GridLayout:
@@ -36,6 +37,8 @@
             on_press: root.create_link()
             background_color: 'orange'
             size_hint_y: 0.1
+            background_normal: 'images/normal.png'
+            background_down: 'images/down.png'
         Label:
             id: link_label
             text: ''
@@ -48,17 +51,23 @@
                 size: (3, 10)
                 on_press: root.copy_link()
                 background_color: 'orange'
+                background_normal: 'images/normal.png'
+                background_down: 'images/down.png'
             Button:
                 text: 'Open Link'
                 size: (3, 10)
                 on_press: root.open_link()
                 background_color: 'orange'
+                background_normal: 'images/normal.png'
+                background_down: 'images/down.png'
 
             Button:
                 text: 'Back To Camera'
                 size: (3, 10)
                 on_press: root.back_to_cam()
                 background_color: 'orange'
+                background_normal: 'images/normal.png'
+                background_down: 'images/down.png'
 <RootWidget>:
     CameraScreen:
         id: camera_screen
