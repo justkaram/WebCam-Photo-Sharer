@@ -53,6 +53,7 @@ class ImageScreen(Screen):
 
     def back_to_cam(self):
         self.manager.current = 'camera_screen'
+        App.get_running_app().root.ids.camera_screen.stop()
 
 
 class RootWidget(ScreenManager):
