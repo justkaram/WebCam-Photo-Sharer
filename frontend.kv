@@ -8,6 +8,7 @@
             resolution: (640, 480)
             size_hint_y: 0.8
             play: False
+            opacity: 0
         Button:
             id: cam_button
             size_hint_y: 0.1
@@ -69,6 +70,12 @@
                 background_normal: 'images/normal.png'
                 background_down: 'images/down.png'
 <RootWidget>:
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
     CameraScreen:
         id: camera_screen
         name: 'camera_screen'
